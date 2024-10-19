@@ -1,0 +1,148 @@
+:root {
+    --primary-color: #495057;
+    --secondary-color: #adb5bd;
+    --background-color: #f8f9fa;
+    --border-color: #dee2e6;
+    --text-color: #212529;
+    --shadow-color: rgba(73, 80, 87, 0.1);
+    --error-color: #e3342f;
+    --hover-shadow-color: rgba(73, 80, 87, 0.2);
+    --thumb-color: #495057;
+}
+
+.calculator-container {
+    background-color: var(--background-color);
+    padding: 30px 30px 30px 10px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px var(--shadow-color);
+    transition: background-color 0.3s;
+}
+
+.calculator-container .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.calculator-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.calculator-container input,
+.calculator-container select,
+.calculator-container button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.calculator-container button {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.calculator-container button:hover {
+    background-color: var(--secondary-color);
+}
+
+.calculator-container .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.calculator-container .flex-item {
+    flex: 1 1;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.calculator-container .toggle-button {
+    flex: 0 0 10%;
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 3px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.calculator-container .flex-container input[type="number"] {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.calculator-container .toggle-button.locked {
+    background-color: var(--error-color);
+}
+
+.calculator-container .aspect-ratio-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--shadow-color);
+    border-radius: 10px;
+    margin: 20px auto 0;
+    padding: 20px;
+}
+
+.calculator-container .aspect-ratio-screen span {
+    font-size: calc(0.8vw + 0.8vh);
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .calculator-container {
+        padding: 15px;
+    }
+
+    .calculator-container .title {
+        font-size: 1.5em;
+    }
+
+    .calculator-container .flex-item {
+        flex: 1 1 100%;
+        margin-left: 0;
+    }
+
+    .calculator-container .toggle-button {
+        flex: 0 0 15%;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-container {
+        padding: 10px;
+    }
+
+    .calculator-container .title {
+        font-size: 1.2em;
+    }
+
+    .calculator-container input,
+    .calculator-container select,
+    .calculator-container button {
+        font-size: 0.9em;
+    }
+
+    .calculator-container .toggle-button {
+        flex: 0 0 20%;
+    }
+
+    .calculator-container .aspect-ratio-screen {
+        margin-top: 15px;
+    }
+}

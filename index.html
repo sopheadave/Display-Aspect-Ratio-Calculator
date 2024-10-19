@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspect Ratio Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <p class="title">Aspect Ratio Calculator</p>
+        <div class="flex-container">
+            <div class="flex-item">
+                <label for="presetRatios">Preset Ratios</label>
+                <select id="presetRatios">
+                    <option value="16:9">16:9</option>
+                    <option value="4:3">4:3</option>
+                    <option value="1:1">1:1</option>
+                    <option value="21:9">21:9</option>
+                    <option value="3:2">3:2</option>
+                </select>
+            </div>
+            <div class="flex-item">
+                <label for="unit">Units</label>
+                <select id="unit">
+                    <option value="px">Pixels</option>
+                    <option value="in">Inches</option>
+                    <option value="cm">Centimeters</option>
+                </select>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">
+                <label for="ratioWidth">Ratio Width</label>
+                <input type="number" min="1" id="ratioWidth" value="16">
+            </div>
+            <div class="flex-item">
+                <label for="ratioHeight">Ratio Height</label>
+                <input type="number" min="1" id="ratioHeight" value="9">
+            </div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">
+                <label for="pixelsWidth">Width <div style="display: inline-block;">(<span id="widthUnit">px</span>)</div></label>
+                <div class="flex-container">
+                    <div class="toggle-button" id="toggleWidth">🔒</div>
+                    <input type="number" min="1" id="pixelsWidth" value="1280">
+                </div>
+            </div>
+            <div class="flex-item">
+                <label for="pixelsHeight">Height <div style="display: inline-block;">(<span id="heightUnit">px</span>)</div></label>
+                <div class="flex-container">
+                    <div class="toggle-button" id="toggleHeight">🔒</div>
+                    <input type="number" min="1" id="pixelsHeight" value="720">
+                </div>
+            </div>
+        </div>
+        <div class="flex-container">
+            <button class="flex-item" onclick="copyToClipboard()">Copy to Clipboard</button>
+            <button class="flex-item" onclick="resetValues()">Reset</button>
+        </div>
+        <div style="padding: 0px 0px 0px 20px;">
+            <div class="aspect-ratio-screen" id="aspectRatioScreen">
+                <span id="aspectRatioText">16:9</span>
+                <span>Size: <span id="sizeResult">0</span> megapixels</span>
+                <span>Aspect Ratio: <span id="aspectRatioResult">0</span></span>
+                <span>Diagonal Angle: <span id="angleDiagonalResult">0</span> radians (<span id="angleDiagonalDegreeResult">0</span>°)</span>
+                <span>Diagonal Length: <span id="diagonalResult">0</span> pixels</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
